@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>你爱好的运动是？</h3>
+    <form>
+        <input type="checkbox" name="hobby">羽毛球
+        <input type="checkbox" name="hobby">足球
+        <input type="checkbox" name="hobby">排球
+        <input type="checkbox" name="hobby">篮球
+        <br>
+        <button class="all" type="button">全选</button>
+        <button class="neither" type="button">全不选</button>
+        <button class="reverse" type="button">反选</button>
+    </form>
+   <script src="jquery-3.3.1.min.js"></script>
+   <script>
+       $(".all").on("click",function(){
+           $("input:checkbox").prop("checked",true);
+       })
+       $(".neither").on("click",function(){
+           $("input:checkbox").prop("checked",false);
+       })
+
+    //    jquery方式
+    //    $(".reverse").on("click",function(){
+    //       var check= $("input:checkbox");
+    //       check.each(function(index,ele){
+    //           if($(ele).prop("checked")){
+    //               $(ele).prop("checked",false);
+    //           }
+    //           else{
+    //               $(ele).prop("checked",true);
+    //           }
+    //       })
+    //    })
+
+    // jquery+原生js
+    // $(".reverse").on("click",function(){
+    //     var check=$("input:checkbox");
+    //     check.each(function(index,ele){
+    //         ele.checked=!ele.checked;
+    //     })
+    // })
+
+
+    $(".reverse").on("click",function(){
+        var ischeck=$("input:checkbox:checked");
+        var notcheck=$("input:checkbox:not(:checked)");
+        ischeck.prop("checked",false);
+        notcheck.prop("checked",true);
+    })
+     
+   
+    // for each()方法介绍：
+    //    var arr=["a","b","c","d"];
+    //    arr.forEach(function(ele,index,obj){
+    //        console.log(index,ele,obj);
+    //    })
+    //    $(arr).each(function(index,ele){
+    //        console.log(index,ele);
+    //    })
+        
+   </script>
+</body>
+</html>

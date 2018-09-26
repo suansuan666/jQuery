@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    table{
+        /* border:1px solid #778899; */
+        margin:100px auto;
+        width:300px;
+    
+    }
+    .th{
+            border:1px solid ;
+            border-bottom: 1px solid #778899;
+        }
+    .td:nth-child(even){
+        background-color: #FFF38F;
+    }
+    .td:nth-child(odd){
+        background-color: white;
+    }
+    .selected{ background:orange;color:#fff;}
+    </style>
+</head>
+<body>
+    <table>
+    <tr class="th">
+            <th>姓名</th>
+            <th>性别</th>
+            <th>居住地</th>
+    </tr>
+    <tr class="td selected">
+        <td><input type="radio" name="person" checked="checked"></td>
+        <td>李四</td>
+        <td>男</td>
+        <td>浙江宁波</td>
+    </tr>  
+    <tr class="td">
+            <td><input type="radio" name="person"></td>
+            <td>王五</td>
+            <td>男</td>
+            <td>浙江宁波</td>
+    </tr>  
+    <tr class="td">
+            <td><input type="radio" name="person"></td>
+            <td>大张</td>
+            <td>男</td>
+            <td>浙江宁波</td>
+    </tr> 
+    <tr class="td">
+            <td><input type="radio" name="person"></td>
+            <td>张三</td>
+            <td>男</td>
+            <td>浙江宁波</td>
+    </tr> 
+    <tr class="td">
+            <td><input type="radio" name="person"></td>
+            <td>mini</td>
+            <td>男</td>
+            <td>浙江宁波</td>
+    </tr>  
+    </table>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+    $("tbody tr").on("click",function(){
+        $(this).addClass("selected").siblings().removeClass("selected").end().find("input:radio").prop("checked",true);
+    })
+    </script>
+</body>
+</html>

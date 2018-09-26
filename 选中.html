@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <ul>
+        <li>aa</li>
+        <li>bb</li>
+        <li>cc</li>
+        <li>dd</li>
+    </ul>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+    $("input").on("keyup",function(){
+        $("li").css("background","none");
+        if(this.value){
+            $("li:contains('"+this.value+"')").css("background","orange");/*字符串拼接问题以及这句话的实际意义?*/
+        }
+    })
+    </script>
+</body>
+</html>
